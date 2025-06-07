@@ -4,7 +4,8 @@
   <a href="https://homepages.inf.ed.ac.uk/amos">Amos Storkey</a>,
   <a href="https://homepages.inf.ed.ac.uk/mlap">Mirella Lapata</a>,
 </p>
-***
+
+---
 
 This repository contains the code for the paper Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering or MAPD, a meta-learning approach for inducing few-shot capabilties in the LMMs using a fixed set of soft prompts that are distilled from task-relevant image features and can be adapted at test time using as low as 1 example. Visit our 📃 paper on arxiv - [Link](dummy_link). This code is based on the LLaVA repository - [Link](https://github.com/haotian-liu/LLaVA/tree/main) and below we list out steps for running training and evaluation for MAPD and other prompt distillation approaches.
 
