@@ -72,7 +72,7 @@ datasets/
 |   |   `-- vqav2
 ```
 
-Each dataset has its own conversation json split file which is needed for meta-task creation and we perform the split in the following way - MAPD and all other prompt distillation approaches require separating all the datasets so as to create meta-tasks for training. In the LLaVA v1.5 mixture, we simply separate all the datasets by either searching for the available dataset keyword names or based on the task instructions as provided in Table 8 in the paper - *Improved baselines with Visual Instruction Tuning* ([Link](https://arxiv.org/pdf/2310.03744)) in the above conversation data (llava_v1_5_mix665k.json)
+Each dataset has its own JSON conversations file which is needed for meta-task creation and we perform the split in the following way - MAPD and all other prompt distillation approaches require separating all the datasets so as to create meta-tasks for training. In the LLaVA v1.5 mixture, we simply separate all the datasets by either searching for the available dataset keyword names or based on the task instructions as provided in Table 8 in the paper - *Improved baselines with Visual Instruction Tuning* ([Link](https://arxiv.org/pdf/2310.03744)) in the above conversation data (llava_v1_5_mix665k.json)
 
 The images should be placed in the respective folders inside each dataset directory based on their image paths.
 
