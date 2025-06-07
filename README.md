@@ -43,7 +43,7 @@ datasets/
 For finetuning, we use the LLaVA v1.5 finetuning data mixture, which can be downloaded from here - [Link](https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K)
 
 We remove the ShareGPT-40K dataset from the llava_v1_5_mix665k.json as we do not use unimodal text-only data. We further include 3 datasets in our finetuning from the LLaVA-OneVision data mixture designed to solve mathematical question answering tasks - MAVIS_math_metagen, TabMWP_Cauldron, geo170k(qa). These can be downloaded from here. [Link](https://huggingface.co/datasets/lmms-lab/LLaVA-OneVision-Data)
-(NOTE: geo170k is further divided (basic, reasoning) based on the instructions depending upon if it requires reasoning.)
+(NOTE: geo170k is further divided (basic, reasoning) based on the task instructions.)
 
 The final datasets directory should be structured in the following way:
 
