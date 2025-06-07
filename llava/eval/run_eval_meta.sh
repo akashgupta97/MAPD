@@ -1,0 +1,33 @@
+#!/bin/bash
+
+CUDA_VISIBLE_DEVICES=0 python llava/eval/run_eval_meta.py \
+    --dataDir VL-ICL \
+    --dataset open_mi \
+    --model_path finetuned_checkpoints/mapd_ckpt \
+    --model_base Qwen/Qwen2.5-7B-Instruct \
+    --model_vision openai/clip-vit-large-patch14-336 \
+    --n_way 2 \
+    --k_spt 4 \
+    --add_dropout False \
+    --task_description "nothing" \
+    --img_size 336 \
+    --version qwen_2 \
+    --finetuning True \
+    --in_context False \
+    --add_fin_prompt True \
+    --add_test_prompt False \
+    --run_name maml_test \
+    --project_name MAPD_test \
+    --model_max_length 4096 \
+    --task_learning_rate 1.0 \
+    --temperature 0.6 \
+    --lazy_preprocess True \
+    --number_of_evaluation_steps_per_iter 30 \
+    --learnable_per_layer_per_step_inner_loop_learning_rate False \
+    --extrapolate_lr True \
+    --enable_inner_loop_optimizable_bn_params False \
+    --second_order False \
+    --multi_step_loss_num_epochs 1 \
+    --mm_use_im_start_end False \
+    --mm_use_im_patch_token False \
+    --grad_acc_part 1

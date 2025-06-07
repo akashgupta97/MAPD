@@ -1,0 +1,64 @@
+#!/bin/bash
+
+ds_array=("gqa" "ocr_vqa" "basic_qa_geo170k" "textvqa" "vg" "conv" "mavis_math_metagen" "det" "tabmwp_cauldron" "complex_res" "refcoco" "reasoning_qa_geo170k" "okvqa" "vqav2" "aokvqa")
+ds_array2=("")
+
+deepspeed llava/train/train_mem.py \
+    --deepspeed ./scripts/zero2.json \
+    --model_name_or_path Qwen/Qwen2.5-7B-Instruct \
+    --version qwen_2 \
+    --data_path datasets/LLaVA-Instruct \
+    --data_mode "mapd" \
+    --k_spt 10 \
+    --k_qry 10 \
+    --img_size 336 \
+    --image_folder Image_data \
+    --train_datasets "${ds_array[@]}" \
+    --val_datasets "${ds_array2[@]}" \
+    --remove_instruct True \
+    --vision_tower openai/clip-vit-large-patch14-336 \
+    --pretrain_mm_mlp_adapter pretrained_checkpoint/mm_projector.bin \
+    --mm_projector_type attention_mapper \
+    --prefix_length 256 \
+    --add_dropout False \
+    --extrapolate_lr False \
+    --tune_mm_mlp_adapter True \
+    --mm_vision_select_layer -2 \
+    --mm_use_im_start_end False \
+    --mm_use_im_patch_token False \
+    --image_aspect_ratio pad \
+    --bf16 True \
+    --output_dir llava_weights/checkpoints \
+    --num_train_epochs 10 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 2 \
+    --grad_acc_part 2 \
+    --inner_checkpointing True \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 1000 \
+    --save_total_limit 1 \
+    --meta_learning_rate 1e-3 \
+    --task_learning_rate 0.1 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --tf32 True \
+    --model_max_length 4096 \
+    --gradient_checkpointing True \
+    --dataloader_num_workers 6 \
+    --lazy_preprocess True \
+    --report_to wandb \
+    --run_name "mapd_trial1" \
+    --project_name "MAPD_train" \
+    --number_of_training_steps_per_iter 5 \
+    --number_of_evaluation_steps_per_iter 5 \
+    --learnable_per_layer_per_step_inner_loop_learning_rate True \
+    --min_learning_rate 0.00001 \
+    --enable_inner_loop_optimizable_bn_params False \
+    --second_order False \
+    --first_order_to_second_order_epoch -1 \
+    --use_multi_step_loss_optimization False \
+    --multi_step_loss_num_epochs 1
