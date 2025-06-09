@@ -4,7 +4,7 @@
   <a href="https://homepages.inf.ed.ac.uk/amos">Amos Storkey</a>,
   <a href="https://homepages.inf.ed.ac.uk/mlap">Mirella Lapata</a>
 </p>
-<hr style="border:0; height:1px; background-color:#ccc;" />
+<!--<hr style="border:0; height:1px; background-color:#ccc;" /> -->
 
 ## Abstract
 
