@@ -6,7 +6,11 @@
 </p>
 <hr style="border:0; height:1px; background-color:#ccc;" />
 
-This repository contains the code for the paper Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering or MAPD, a meta-learning approach for inducing few-shot capabilties in the LMMs using a fixed set of soft prompts that are distilled from task-relevant image features and can be adapted at test time using as low as 1 example. Visit our 📃 paper on arxiv - [Link](dummy_link). This code is based on the LLaVA repository - [Link](https://github.com/haotian-liu/LLaVA/tree/main) and below we list out steps for running training and evaluation for MAPD and other prompt distillation approaches.
+## Abstract
+
+![MAPD Architecture](mllava.jpg)
+
+Large Multimodal Models (LMMs) often rely on in-context learning (ICL) to perform new tasks with minimal supervision. However, ICL performance, especially in smaller LMMs, is inconsistent and does not always improve monotonically with increasing examples. We hypothesize that this occurs due to the LMM being overwhelmed by additional information present in the image embeddings, which is not required for the downstream task. To address this, we propose a meta-learning approach that provides an alternative for inducing few-shot capabilities in LMMs, using a fixed set of soft prompts that are distilled from task-relevant image features and can be adapted at test time using a few examples. To facilitate this distillation, we introduce an attention-mapper module that can be easily integrated with the popular LLaVA v1.5 architecture and is jointly learned with soft prompts, enabling task adaptation in LMMs under low-data regimes with just a few gradient steps. Evaluation on the VL-ICL Bench shows that our method consistently outperforms ICL and related prompt-tuning approaches, even under image perturbations, improving task induction and reasoning across visual question answering tasks. Please visit our 📃 paper on arxiv - [Link](dummy_link). This code is based on the LLaVA repository - [Link](https://github.com/haotian-liu/LLaVA/tree/main) and below we list out steps for running training and evaluation for MAPD and other prompt distillation approaches.
 
 ## Install dependencies
 
