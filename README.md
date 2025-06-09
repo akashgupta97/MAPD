@@ -1,8 +1,8 @@
 <h1 align="center">Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering</h1>
 <p align="center">
-  <a href="https://scholar.google.com/citations?user=ypzuEjgAAAAJ&hl=en&authuser=1">Akash Gupta</a>,
+  <a href="https://www.linkedin.com/in/akashgupta97">Akash Gupta</a>,
   <a href="https://homepages.inf.ed.ac.uk/amos">Amos Storkey</a>,
-  <a href="https://homepages.inf.ed.ac.uk/mlap">Mirella Lapata</a>,
+  <a href="https://homepages.inf.ed.ac.uk/mlap">Mirella Lapata</a>
 </p>
 <hr style="border:0; height:1px; background-color:#ccc;" />
 
