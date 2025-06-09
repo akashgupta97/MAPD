@@ -105,6 +105,8 @@ Please run the below command to start model finetuning
 bash scripts/v1_5/finetune_qwen_mapd.sh
 ```
 
+The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the ```MetaTrainer``` and ```MetaTuning``` classes in file ```llava/train/few_shot_learning_system.py``` [Link](https://github.com/akashgupta97/MAPD/blob/main/llava/train/few_shot_learning_system.py).
+
 **Multi-Task<sup>PD</sup>**
 
 ```Shell
@@ -126,8 +128,6 @@ bash scripts/v1_5/finetune_qwen_ict.sh
 **ModelAvg<sup>PD</sup>**
 
 This uses the same script as NoMetaTask<sup>PD</sup> but we finetune the attention-mapper separately on each dataset in our finetuning data mixture and then compute a weighted average of parameters.
-
-The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the ```MetaTrainer``` and ```MetaTuning``` classes in file ```llava/train/few_shot_learning_system.py``` [Link](https://github.com/akashgupta97/MAPD/blob/main/llava/train/few_shot_learning_system.py).
 
 ## Model Evaluation
 
