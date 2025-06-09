@@ -70,14 +70,14 @@ datasets/
 |   |   `-- vqav2
 ```
 
-Each dataset has its own JSON conversations file which is needed for meta-task creation and we perform the split in the following way - MAPD and all other prompt distillation approaches require separating all the datasets so as to create meta-tasks for training. In the LLaVA v1.5 mixture, we simply separate all the datasets by either searching for the available dataset keyword names or based on the task instructions as provided in Table 8 in the paper - *Improved baselines with Visual Instruction Tuning* ([Link](https://arxiv.org/pdf/2310.03744)) for the conversation data downloaded from the above link (llava_v1_5_mix665k.json). The images should be placed in the respective folders inside each dataset directory based on their image paths.
+Each dataset has its own JSON conversations file which is needed for meta-task creation and we perform the split in the following way - MAPD and all other prompt distillation approaches require separating all the datasets so as to create meta-tasks for training. In the LLaVA v1.5 mixture, we simply separate all the datasets by either searching for the available dataset keyword names or based on the task instructions as provided in Table 8 in the paper - *Improved baselines with Visual Instruction Tuning* ([Link](https://arxiv.org/pdf/2310.03744)) for the conversation data downloaded from the above link (llava_v1_5_mix665k.json). The images should be placed in their respective folders inside each dataset directory based on the image paths.
 
 
 ## Model Training
 
 ### Compute Requirements
 
-The current model training pipeline uses 4 H200 GPUs with a 143GB VRAM per GPU with different gradient accumulation steps for different prompt distillation approaches as mentioned in Appendix A.1.3 of the paper.
+The current model training pipeline uses 4 H200 GPUs with a 143GB VRAM per GPU with different gradient accumulation steps for different prompt distillation approaches as mentioned in Appendix A.1.3 of our paper.
 
 ### Pretraining
 
@@ -119,7 +119,7 @@ bash scripts/v1_5/finetune_qwen_ict.sh
 
 This uses the same script as NoMetaTask but we finetune the attention-mapper separately on each dataset in our finetuning data mixture and then compute a weighted average of parameters.
 
-The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the file ```MAPD/llava/train/few_shot_learning_system.py```.
+The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the file ```llava/train/few_shot_learning_system.py``` [Link](https://github.com/akashgupta97/MAPD/blob/main/llava/train/few_shot_learning_system.py).
 
 ## Model Evaluation
 
