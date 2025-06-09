@@ -119,7 +119,7 @@ bash scripts/v1_5/finetune_qwen_ict.sh
 
 This uses the same script as NoMetaTask but we finetune the attention-mapper separately on each dataset in our finetuning data mixture and then compute a weighted average of parameters.
 
-The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the file ```llava/train/few_shot_learning_system.py``` [Link](https://github.com/akashgupta97/MAPD/blob/main/llava/train/few_shot_learning_system.py).
+The MAML code is borrowed from the implementation of Antoniou et al. - *How to Train Your MAML* ([Link](https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch/tree/master)) and our modified version can be found in the ```MetaTrainer``` and ```MetaTuning``` classes in file ```llava/train/few_shot_learning_system.py``` [Link](https://github.com/akashgupta97/MAPD/blob/main/llava/train/few_shot_learning_system.py).
 
 ## Model Evaluation
 
