@@ -81,7 +81,7 @@ Each dataset has its own JSON conversations file which is needed for meta-task c
 
 ### Models Used
 
-We use the same vision encoder as LLaVA i.e.  CLIP ViT-L/14-336px ([Link](https://huggingface.co/openai/clip-vit-large-patch14-336)), an attention-mapper module (implemented in the AttentionMapper class in ```https://github.com/akashgupta97/MAPD/blob/main/llava/model/multimodal_projector/builder.py```), and Qwen2.5-7B-Instruct ([Link](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)) as our base LLM. The pretrained weights for CLIP and Qwen LLM are automatically downloaded using HuggingFace when executing the below scripts.
+We use the same vision encoder as LLaVA v1.5 i.e.  CLIP ViT-L/14-336px ([Link](https://huggingface.co/openai/clip-vit-large-patch14-336)), an attention-mapper module (implemented in the AttentionMapper class in ```https://github.com/akashgupta97/MAPD/blob/main/llava/model/multimodal_projector/builder.py```), and Qwen2.5-7B-Instruct ([Link](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)) as our base LLM. The pretrained weights for CLIP and Qwen LLM are automatically downloaded using HuggingFace when executing the below scripts.
 
 ### Compute Requirements
 
