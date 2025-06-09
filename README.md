@@ -77,7 +77,7 @@ Each dataset has its own JSON conversations file which is needed for meta-task c
 
 ### Compute Requirements
 
-The current model training pipeline uses 4 H200 GPUs with a 143GB VRAM per GPU with different gradient accumulation steps for different prompt distillation approaches as mentioned in Appendix A.1.3 of our paper.
+The current model training pipeline uses 4 H200 GPUs with a 143GB VRAM per GPU for all the prompt distillation approaches as mentioned in Appendix A.1.3 of our paper. 
 
 ### Pretraining
 
