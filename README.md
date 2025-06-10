@@ -145,4 +145,16 @@ We use the VL-ICL benchmark for our few-shot evaluation - *VL-ICL BENCH: THE DEV
 
 ## Citation
 
+If you find this work useful, please cite it as follows:
 
+```
+@misc{gupta2025metaadaptivepromptdistillationfewshot,
+      title={Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering}, 
+      author={Akash Gupta and Amos Storkey and Mirella Lapata},
+      year={2025},
+      eprint={2506.06905},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2506.06905}, 
+}
+```
